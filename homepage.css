@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Using a cleaner, more modern font stack */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  /* Removed the large margin-bottom for now, let content flow */
+  background-color: #f4f7f9; /* Light, soft gray/blue for background */
+  color: #333; /* Default text color */
+  line-height: 1.6;
+}
+
+header {
+  height: 180px; /* Slightly taller header */
+  background-image: url("https://images.pexels.com/photos/396304/pexels-photo-396304.jpeg");
+  background-position: center;
+  background-size: cover; /* Ensure the image covers the area nicely */
+  display: flex; /* Use flex to easily center the content */
+  align-items: center;
+  justify-content: center;
+  position: relative; /* For the overlay */
+}
+
+/* Add a dark overlay to make text pop against the background image */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 48px;
+  padding: 20px;
+  color: #fff; /* White text */
+  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); /* Stronger, darker shadow */
+  z-index: 2; /* Bring text above the overlay */
+  letter-spacing: 2px;
+}
+
+.menu {
+  height: 60px; /* Slimmer, more compact navbar */
+  width: 100%;
+  background-color: #2c3e50; /* Deep blue/charcoal for professional look */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center links in the middle */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtler shadow */
+  position: sticky;
+  top: 0;
+  z-index: 10; /* Ensure navbar stays above other content */
+}
+
+.menu a {
+  text-decoration: none;
+  color: #ecf0f1; /* Off-white/light gray */
+  font-size: 16px;
+  padding: 15px 20px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions for hover */
+  font-weight: 500;
+}
+
+.menu a:hover {
+  background-color: #3498db; /* Bright blue on hover */
+  color: #fff; /* White text on hover */
+  /* Removed the font-size change for a smoother, less disruptive hover effect */
+}
+
+.container {
+  height: 450px; /* Taller hero section */
+  width: 90%; /* Center container and give it some space on the sides */
+  max-width: 1200px;
+  margin: 30px auto; /* Center it horizontally with margin */
+  background-image: url("https://images.pexels.com/photos/1036657/pexels-photo-1036657.jpeg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 12px; /* Rounded corners for a modern look */
+  overflow: hidden; /* To contain the overlay/text */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Use the handwritten style for the text block */
+.container .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  /* Combined handwritten styles for overlay and text */
+  background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
+  color: white;
+}
+
+.container .text h1 {
+  font-size: 3.5rem; /* Larger, relative unit */
+  margin-bottom: 20px;
+  padding: 0;
+  border-bottom: 3px solid #3498db; /* A nice highlight line */
+  line-height: 1.2;
+}
+
+.container .text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px; /* Keep paragraph lines readable */
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Apply the grid layout to sections for multi-column article display */
+section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px 0;
+  /* Removed fixed height and lightblue background from section */
+  background-color: transparent;
+
+  display: grid;
+  /* Create columns that automatically adjust */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px; /* Space between articles */
+}
+
+article {
+  background-color: #ffffff; /* White background for contrast */
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-top: 5px solid #3498db; /* Color highlight */
+  color: #333; /* Darker text */
+}
+
+article:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+section article h3 {
+  /* Changed from h1 in your notes to h3 in your HTML */
+  font-size: 24px;
+  color: #2c3e50; /* Deep blue/charcoal for headings */
+  margin-bottom: 15px;
+  padding: 0;
+  border-bottom: 2px dashed #ecf0f1;
+  display: inline-block;
+}
+
+section article p {
+  font-size: 16px;
+  line-height: 1.7;
+  text-indent: 0;
+  padding: 0;
+}
